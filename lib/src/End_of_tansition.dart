@@ -1,6 +1,8 @@
+import 'package:animation_navigating/src/thank_you_screen.dart';
 import 'package:animation_navigating/src/top_to_bottom_faded.dart';
 import 'package:flutter/material.dart';
 import 'package:page_animation_transition/animations/bottom_to_top_faded_transition.dart';
+import 'package:page_animation_transition/animations/fade_animation_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 
 class EndPage extends StatelessWidget {
@@ -15,7 +17,7 @@ class EndPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'How it will be Useful',
+              'Hope it will be Useful',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -44,17 +46,16 @@ class EndPage extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.blue,
-          onPressed: () {
-            // ignore: todo
-            //TODO Go to welcome screen
-            // Navigator.of(context).push(PageAnimationTransition(
-            //     page: const PageSeven(),
-            //     pageAnimationType: RotationAnimationTransition()));
-          },
-          child: const Text('End of App')),
+      floatingActionButton: FloatingActionButton.extended(
+        label: const Text('End of App'),
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.blue,
+        onPressed: () {
+          Navigator.of(context).push(PageAnimationTransition(
+              page: const ThankYouScreen(),
+              pageAnimationType: FadeAnimationTransition()));
+        },
+      ),
     );
   }
 }

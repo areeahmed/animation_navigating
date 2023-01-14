@@ -1,6 +1,8 @@
+import 'package:animation_navigating/src/End_of_tansition.dart';
 import 'package:animation_navigating/src/top_to_bottom_faded.dart';
 import 'package:flutter/material.dart';
 import 'package:page_animation_transition/animations/bottom_to_top_faded_transition.dart';
+import 'package:page_animation_transition/animations/fade_animation_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 
 class PageEleven extends StatelessWidget {
@@ -48,9 +50,9 @@ class PageEleven extends StatelessWidget {
         backgroundColor: Colors.white,
         foregroundColor: Colors.blue,
         onPressed: () {
-          // Navigator.of(context).push(PageAnimationTransition(
-          //     page: const PageSeven(),
-          //     pageAnimationType: RotationAnimationTransition()));
+          Navigator.of(context).push(PageAnimationTransition(
+              page: const EndPage(),
+              pageAnimationType: FadeAnimationTransition()));
         },
         child: const Icon(Icons.arrow_forward_ios),
       ),
