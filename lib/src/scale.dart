@@ -35,14 +35,17 @@ class PageSix extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            BackButton(
-              color: Colors.white,
+            TextButton(
               onPressed: () {
                 Navigator.of(context).push(PageAnimationTransition(
                     page: const PageFive(),
                     pageAnimationType: FadeAnimationTransition()));
               },
-            )
+              child: const Text(
+                'Go Back',
+                style: TextStyle(color: Colors.white, fontSize: 22),
+              ),
+            ),
           ],
         ),
       ),

@@ -1,7 +1,6 @@
+import 'package:animation_navigating/src/left_to_right_faded.dart';
 import 'package:animation_navigating/src/thank_you_screen.dart';
-import 'package:animation_navigating/src/top_to_bottom_faded.dart';
 import 'package:flutter/material.dart';
-import 'package:page_animation_transition/animations/bottom_to_top_faded_transition.dart';
 import 'package:page_animation_transition/animations/fade_animation_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 
@@ -35,14 +34,17 @@ class EndPage extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            BackButton(
-              color: Colors.white,
+            TextButton(
               onPressed: () {
                 Navigator.of(context).push(PageAnimationTransition(
-                    page: const PageEight(),
-                    pageAnimationType: BottomToTopFadedTransition()));
+                    page: const PageEleven(),
+                    pageAnimationType: FadeAnimationTransition()));
               },
-            )
+              child: const Text(
+                'Go Back',
+                style: TextStyle(color: Colors.white, fontSize: 22),
+              ),
+            ),
           ],
         ),
       ),

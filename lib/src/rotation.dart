@@ -1,8 +1,8 @@
 import 'package:animation_navigating/src/scale.dart';
 import 'package:animation_navigating/src/top_to_bottom_faded.dart';
 import 'package:flutter/material.dart';
+import 'package:page_animation_transition/animations/fade_animation_transition.dart';
 import 'package:page_animation_transition/animations/rotate_animation_transition.dart';
-import 'package:page_animation_transition/animations/scale_animation_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 
 class PageSeven extends StatelessWidget {
@@ -35,14 +35,17 @@ class PageSeven extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            BackButton(
-              color: Colors.white,
+            TextButton(
               onPressed: () {
                 Navigator.of(context).push(PageAnimationTransition(
                     page: const PageSix(),
-                    pageAnimationType: ScaleAnimationTransition()));
+                    pageAnimationType: FadeAnimationTransition()));
               },
-            )
+              child: const Text(
+                'Go Back',
+                style: TextStyle(color: Colors.white, fontSize: 22),
+              ),
+            ),
           ],
         ),
       ),

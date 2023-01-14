@@ -1,7 +1,7 @@
 import 'package:animation_navigating/src/top_to_bottom.dart';
 import 'package:animation_navigating/src/left_to_right.dart';
 import 'package:flutter/material.dart';
-import 'package:page_animation_transition/animations/bottom_to_top_transition.dart';
+import 'package:page_animation_transition/animations/fade_animation_transition.dart';
 import 'package:page_animation_transition/animations/right_to_left_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 
@@ -35,13 +35,17 @@ class PageThree extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            BackButton(
-              color: Colors.white,
-              onPressed: () => Navigator.of(context).push(
-                  PageAnimationTransition(
-                      page: const PageTwo(),
-                      pageAnimationType: BottomToTopTransition())),
-            )
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).push(PageAnimationTransition(
+                    page: const PageTwo(),
+                    pageAnimationType: FadeAnimationTransition()));
+              },
+              child: const Text(
+                'Go Back',
+                style: TextStyle(color: Colors.white, fontSize: 22),
+              ),
+            ),
           ],
         ),
       ),

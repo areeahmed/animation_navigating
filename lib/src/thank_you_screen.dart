@@ -40,7 +40,13 @@ class ThankYouScreen extends StatelessWidget {
                 SizedBox(
                   width: 5,
                 ),
-                Text('Ari Ahmed Ibrahim'),
+                Text(
+                  'Ari Ahmed Ibrahim',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
               ],
             ),
           ],

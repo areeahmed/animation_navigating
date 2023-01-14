@@ -2,7 +2,6 @@ import 'package:animation_navigating/src/left_to_right.dart';
 import 'package:animation_navigating/src/scale.dart';
 import 'package:flutter/material.dart';
 import 'package:page_animation_transition/animations/fade_animation_transition.dart';
-import 'package:page_animation_transition/animations/right_to_left_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 
 class PageFive extends StatelessWidget {
@@ -35,13 +34,17 @@ class PageFive extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            BackButton(
-              color: Colors.white,
-              onPressed: () => Navigator.of(context).push(
-                  PageAnimationTransition(
-                      page: const PageFour(),
-                      pageAnimationType: RightToLeftTransition())),
-            )
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).push(PageAnimationTransition(
+                    page: const PageFour(),
+                    pageAnimationType: FadeAnimationTransition()));
+              },
+              child: const Text(
+                'Go Back',
+                style: TextStyle(color: Colors.white, fontSize: 22),
+              ),
+            ),
           ],
         ),
       ),

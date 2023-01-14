@@ -1,7 +1,7 @@
 import 'package:animation_navigating/src/rotation.dart';
 import 'package:animation_navigating/src/bottom_to_top_faded.dart';
 import 'package:flutter/material.dart';
-import 'package:page_animation_transition/animations/rotate_animation_transition.dart';
+import 'package:page_animation_transition/animations/fade_animation_transition.dart';
 import 'package:page_animation_transition/animations/top_to_bottom_faded.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 
@@ -35,14 +35,17 @@ class PageEight extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            BackButton(
-              color: Colors.white,
+            TextButton(
               onPressed: () {
                 Navigator.of(context).push(PageAnimationTransition(
                     page: const PageSeven(),
-                    pageAnimationType: RotationAnimationTransition()));
+                    pageAnimationType: FadeAnimationTransition()));
               },
-            )
+              child: const Text(
+                'Go Back',
+                style: TextStyle(color: Colors.white, fontSize: 22),
+              ),
+            ),
           ],
         ),
       ),
